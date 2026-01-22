@@ -336,10 +336,11 @@ textarea.input::placeholder{
 
     // ✅ 3종 파일 등록
   const PPT_FILES = {
-    executive: { url: "./executive.pptx", filename: "executive.pptx", label: "AI Executive Briefing" },
-    roadmap:   { url: "./AI_roadmap.pptx",   filename: "roadmap.pptx",   label: "AI Roadmap" },
-    pitch:     { url: "./peck.pptx",   filename: "pitch_Deck.pptx",   label: "Pitch Deck" }
-  };
+  executive: { url: "./executive.pptx", filename: "executive.pptx", label: "AI Executive Briefing" },
+  roadmap:   { url: "./roadmap.pptx",   filename: "roadmap.pptx",   label: "AI Roadmap" },
+  pitch:     { url: "./pitch.pptx",     filename: "pitch.pptx",     label: "Pitch Deck" }
+};
+
 
   // ✅ 어떤 파일을 제공했는지 기록
   const provided = new Set(); // "executive" | "roadmap" | "pitch"
