@@ -289,7 +289,7 @@ textarea.input::placeholder{
     <div class="composer">
       <textarea class="input" id="msg" rows="2"
         placeholder='Enter = send, Shift+Enter = new line&#10;You can try: "Help me create a PPT about AI business"'></textarea>
-      <button class="btn" id="send">Send</button>
+      <button class="btn" id="send" type="button">Send</button>
     </div>
 
     <div class="hint">
@@ -844,11 +844,16 @@ If you want, I can help you with:
   }
 
   msg.addEventListener("keydown", (e) => {
-    if(e.key === "Enter" && !e.shiftKey){
-      e.preventDefault();
-      onSend();
-    }
-  });
+  // ✅ iframe 환경에서 키 이벤트 꼬임 방지
+  e.stopPropagation();
+
+  if (e.key === "Enter" && !e.shiftKey) {
+    e.preventDefault();
+    e.stopPropagation();
+    onSend();
+  }
+});
+
   send.addEventListener("click", onSend);
 
   reset.addEventListener("click", () => {
