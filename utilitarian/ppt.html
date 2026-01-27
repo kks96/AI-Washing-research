@@ -229,13 +229,15 @@ textarea.input::placeholder{
 .typing{
   display:inline-flex;
   align-items:center;
-  gap:4px;
-  padding:10px 12px;
-  border-radius:14px;
-  background: rgba(139,92,246,.16);
-  border:1px solid rgba(255,255,255,.12);
-  backdrop-filter: blur(6px);
+  gap:6px;
+  padding:4px 6px;
+
+  background: none;        /* ✅ 타원 원인 제거 */
+  border: none;
+  box-shadow: none;
+  backdrop-filter: none;
 }
+
 .dot{
   width:6px;height:6px;border-radius:999px;
   background: radial-gradient(circle, rgba(196,181,253,1), rgba(124,58,237,1));
