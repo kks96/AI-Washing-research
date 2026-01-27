@@ -218,6 +218,26 @@ textarea.input::placeholder{
 
 .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
 
+/* =========================
+   Action button overflow fix
+   ========================= */
+.actions{
+  flex-wrap: wrap;
+}
+
+.actionBtn{
+  max-width: 100%;
+  min-width: 0;
+  flex: 1 1 auto;          /* ✅ 버튼이 줄어들 수 있게 */
+  white-space: normal;     /* ✅ 한 줄 고정 해제 */
+  overflow-wrap: anywhere; /* ✅ 긴 단어도 줄바꿈 */
+  word-break: break-word;  /* ✅ 영문/URL 끊기 */
+}
+
+@media (max-width: 480px){
+  .actionBtn{ width: 100%; }
+}
+    
 .actionBtn{
   padding:9px 12px;
   border-radius:999px;
