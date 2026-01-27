@@ -228,6 +228,8 @@ textarea.input::placeholder{
 
 .typing{
   display: inline-flex;
+  flex-direction: row !important;
+  justify-content: flex-start;
   align-items: center;
   gap: 6px;
   padding: 4px 6px;
@@ -242,6 +244,7 @@ textarea.input::placeholder{
 }
 
 .dot{
+  display: inline-block;
   width:6px;height:6px;border-radius:999px;
   background: radial-gradient(circle, rgba(196,181,253,1), rgba(124,58,237,1));
   box-shadow: 0 0 10px rgba(139,92,246,.60);
