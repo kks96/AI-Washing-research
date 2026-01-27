@@ -106,7 +106,7 @@ body{
   width: fit-content !important;
 
   /* ✅ 너무 넓어지지만 않게 */
-  max-width: min(86%, 700px) !important;
+  max-width: 100% !important;
 
   /* ✅ 데스크톱에선 고정 최소폭 없애기 */
   min-width: 0 !important;
@@ -166,6 +166,32 @@ body{
 
 .meta{font-size:11px;color:var(--muted);margin-top:4px}
 
+/* =========================
+   Fix: bubbles look too wide
+   ========================= */
+
+/* bubble+meta를 담는 래퍼(div)가 남는 폭을 먹지 않게 */
+.row > div{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  flex: 0 1 auto;       /* ✅ 남는 폭 먹지 말고 내용 기반 */
+  width: fit-content;   /* ✅ 내용만큼만 */
+  max-width: min(86%, 700px); /* ✅ 너무 넓어지지 않게 */
+}
+
+/* 내 메시지는 오른쪽 정렬 */
+.row.me > div{
+  align-items: flex-end;
+}
+
+/* meta가 block이라 폭을 키우는 걸 방지 */
+.meta{
+  display: inline-block;
+  width: fit-content;
+}
+    
 .composer{
   display:flex;
   gap:10px;
