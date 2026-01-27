@@ -81,7 +81,21 @@ body{
 
 .row{display:flex;gap:10px;margin:10px 0;align-items:flex-end}
 .row.me{justify-content:flex-end}
-.row > div{min-width:0}
+.row > div{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+
+  flex: 0 1 auto;
+  width: fit-content;
+  max-width: min(86%, 700px);
+
+  min-width: 120px;  /* ✅ 안전장치: hi가 찢어지지 않게 */
+}
+
+.row.me > div{
+  align-items:flex-end;
+}
 
 .avatar{
   width:38px;height:38px;
