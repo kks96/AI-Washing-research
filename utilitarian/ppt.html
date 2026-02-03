@@ -377,7 +377,7 @@ textarea.input::placeholder{
     <div class="endedOverlay" id="endedOverlay">
       <div class="endedBox">
         <div class="endedTitle">✅ This chat has ended</div>
-        <div class="endedDesc">Thanks for using GPPT. Come back anytime 😊</div>
+        <div class="endedDesc">Thanks for using GPPT. Come back anytime. </div>
       </div>
     </div>
 
@@ -684,7 +684,7 @@ Pick one to continue:`,
       id: "greeting",
       patterns: [/^hi$/i,/^hello$/i,/^hey$/i,/^yo$/i,/^sup$/i,/^good (morning|afternoon|evening)$/i],
       reply: () => ({
-        text: `I'm really glad to meet you 😉!
+        text: `I'm really glad to meet you!
 
 What do you need? For now, I can help you with:
 • A starter template
@@ -705,7 +705,7 @@ What do you need? For now, I can help you with:
       reply: () => {
         awaitingContinueAfterThanks = true;
         return ({
-          text: `You’re welcome 👌
+          text: `You’re welcome.
 Do you want me to help you with a further deck format or starter template?`,
           actions: [
             { label: "Executive briefing", type: "choice", value: "executive" },
@@ -743,7 +743,7 @@ Do you want me to help you with a further deck format or starter template?`,
   ];
 
   const FALLBACKS = [
-    `Sorry 😅 I didn’t fully understand. Could you tell me a little more detail?
+    `Sorry. I didn’t fully understand. Could you tell me a little more detail?
 
 For example, you can say:
 • "Download a PowerPoint template"
@@ -795,7 +795,7 @@ Try:
         awaitingContinueAfterThanks = false;
         addRow({
           who: "bot",
-          text: `Got it 😊 Thanks for using GPPT.
+          text: `Got it. Thanks for using GPPT.
 Whenever you need help, just come back and ask — I’ll be here!`
         });
 
@@ -838,7 +838,7 @@ If you want, I can help you with:
     }
 
     if(t.length <= 2 || t === "ok" || t === "k" || t === "?"){
-      addRow({who:"bot", text: `Hi! How can I help you? You can type "help" to see options, or say "download template"👍.`});
+      addRow({who:"bot", text: `Hi! How can I help you? You can type "help" to see options, or say "download template".`});
       return;
     }
 
@@ -896,7 +896,7 @@ If you want, I can help you with:
 
   addRow({
     who:"bot",
-    text: `Hi! I'm GPPT 👋— your AI PPT helper.
+    text: `Hi! I'm GPPT — your AI PPT helper.
 Tell me what kind of deck you want, or type "help" to see buttons.
 
 Example: "Help me create a PowerPoint about AI business"`
