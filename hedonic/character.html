@@ -655,14 +655,24 @@ body { margin:0; }
   }
 
   function botSay(text, actions, media){
-    addRow({
-      who:"bot",
-      text,
-      avatarUrl: activeChar ? activeChar.avatar : null,
-      actions: actions || [],
-      media: media || null
-    });
-  }
+  const autoGif =
+    (!media && activeChar)
+      ? pickAutoGif({
+          charId: activeChar.id,
+          intent: "auto",
+          mode: conversationMode,
+          text: text
+        })
+      : media || null;
+
+  addRow({
+    who:"bot",
+    text,
+    avatarUrl: activeChar ? activeChar.avatar : null,
+    actions: actions || [],
+    media: autoGif
+  });
+}
 
   async function botSayWithDelay(text, actions=[], media=null, opts={}){
     const { immediate=false, delayMs=950 } = opts;
